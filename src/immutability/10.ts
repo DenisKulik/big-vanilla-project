@@ -29,10 +29,10 @@ export const updateBooksToUser = (
     oldBook: string,
     newBook: string): UserWithBooksType => ({
     ...user,
-    books: [ ...user.books.map(book => book === oldBook ? newBook : oldBook) ]
+    books: user.books.map(book => book === oldBook ? newBook : oldBook)
 });
 
 export const deleteBooksToUser = (user: UserWithBooksType,
                                   BookForDel: string): UserWithBooksType =>
-    ({ ...user, books: [ ...user.books.filter(book => book !== BookForDel) ] });
+    ({ ...user, books: user.books.filter(book => book !== BookForDel) });
 
